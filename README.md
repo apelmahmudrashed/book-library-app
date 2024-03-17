@@ -5,7 +5,7 @@
 
 Cloone the repository:
 ```
-git clone https://github.com/apelmahmudrashed/book-library-app.git:
+git clone https://github.com/apelmahmudrashed/book-library-app.git
 ```
 
 ## Back-end API
