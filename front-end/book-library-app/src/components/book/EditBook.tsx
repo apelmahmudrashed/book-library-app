@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
+//Back-end api base url
 type EditBookProps = {
   apiBaseUrl: string;
 };
 
+//Update book component
 const EditBook = (props: EditBookProps) => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -22,6 +24,7 @@ const EditBook = (props: EditBookProps) => {
   useEffect(() => {
     loadBook();
   }, []);
+
   const onSubmit = (e: any) => {
     e.preventDefault();
     axios

@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
+//Back-end api base url to consume resources
 type BookProps = {
   apiBaseUrl: string;
 };
 
+//Displays book list on the main page
 function ListBooks(props: BookProps) {
   const [books, setBook] = useState<any>();
 
@@ -15,6 +17,7 @@ function ListBooks(props: BookProps) {
     loadBooks();
   }, []);
 
+  //Load all books from db
   const loadBooks = () => {
     axios
       .get(`${props.apiBaseUrl}/api/books`)
@@ -28,6 +31,7 @@ function ListBooks(props: BookProps) {
       });
   };
 
+  //Load sorted book list from db
   const sortBooks = () => {
     axios
       .get(`${props.apiBaseUrl}/api/books/sortby/title`)
@@ -41,6 +45,7 @@ function ListBooks(props: BookProps) {
       });
   };
 
+  //Delete book by id
   const deleteBook = (id: Number) => {
     axios
       .delete(`${props.apiBaseUrl}/api/books/${id}`)

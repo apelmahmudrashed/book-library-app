@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+//The top navegation bar
 function NavBar() {
   return (
     <>

@@ -2,10 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+//Back-end api base url to consume resources
 type AddBookProps = {
   apiBaseUrl: string;
 };
 
+//Add book componenet
 const AddBook = (props: AddBookProps) => {
   const navigate = useNavigate();
   const [Book, setBook] = useState({
